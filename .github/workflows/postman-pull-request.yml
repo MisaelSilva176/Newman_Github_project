@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       # INstall Node on the runner
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - name: Installing node.js
+        uses: actions/setup-node@v3 # Used to install node environment - XXX https://github.com/actions/setup-node
         with:
-          node-version: 16.x
+          node-version: 18 # Use the same node.js version as the one Vercel's uses (currently node18.x)
           
       # Install the newman command line utility and also install the html extra reporter
       - name: Install newman
